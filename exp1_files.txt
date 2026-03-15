@@ -1,0 +1,39 @@
+hadoop fs -ls /
+hadoop fs -ls -R /
+gedit sample.txt
+cat sample.txt
+hadoop fs -mkdir /rmm_bda_lab
+hadoop fs -put sample.txt /rmm_bda_lab
+hadoop fs -ls /rmm_bda_lab
+hadoop fs -cat /rmm_bda_lab/sample.txt
+hadoop fs -get /rmm_bda_lab/sample.txt Desktop/rmm/sample.txt
+hadoop fs -ls /rmm_bda_lab
+hadoop fs -rm /rmm_bda_lab/sample.txt
+hadoop fs -ls /rmm_bda_lab
+hadoop fs -rm -r /rmm_bda_lab
+hadoop fs -ls /rmm_bda_lab
+hadoop fs -copyFromLocal sample.txt /rmm_bda_lab
+hadoop fs -ls /
+hadoop fs -copyToLocal /rmm_bda_lab/sample.txt Desktop/rmm/sample.txt
+hadoop fs -copyToLocal /rmm_bda_lab/sample.txt Desktop/rmm/sample1.txt
+hadoop fs -du -s -h /rmm_bda_lab
+hadoop fs -du -s /rmm_bda_lab
+hadoop fs -du -s -h /
+hadoop fs -cat /rmm_bda_lab/sample.txt
+hadoop fs -cat /rmm_bda_lab/sample.txt | head -n 5
+hadoop fs -cat /rmm_bda_lab/sample.txt | head -n 1
+hadoop fs -cat /rmm_bda_lab/sample.txt | tail -n 1
+hadoop fs -cat /rmm_bda_lab/sample.txt | tail -n 2
+echo "This is new data" | hadoop fs -appendToFile - /rmm_bda_lab/sample.txt
+hadoop fs -cat /rmm_bda_lab/sample.txt
+echo "Sample Content" | hadoop fs -put - /rmm_bda_lab/sample1.txt
+hadoop fs -cat /rmm_bda_lab/sample1.txt
+hadoop fs -mkdir /rmm_bda_lab1
+hadoop fs -ls /rmm_bda_lab1
+hadoop fs -ls /rmm_bda_lab
+hadoop fs -cp /rmm_bda_lab/sample.txt /rmm_bda_lab1
+hadoop fs -ls /rmm_bda_lab1
+hadoop fs -cat /rmm_bda_lab1/sample.txt
+hadoop fs -mv /rmm_bda_lab/sample.txt /rmm_bda_lab1
+hadoop fs -ls /rmm_bda_lab
+hadoop fs -ls /rmm_bda_lab1
